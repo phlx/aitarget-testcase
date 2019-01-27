@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.snack-error {
+  background-color: #b00020;
+}
+
+.mat-list-base .mat-list-item[active] .mat-list-text > * {
+  font-weight: bold;
+}

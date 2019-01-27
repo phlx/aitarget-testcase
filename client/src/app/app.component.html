@@ -1,0 +1,103 @@
+<div class="container">
+  <header>
+    <div class="logo">
+      <img [src]="sources.logo" alt="logo" />
+    </div>
+    <div class="heading">
+      <h1>ООО «Ромашка»</h1>
+    </div>
+    <mat-progress-spinner *ngIf="loading"
+        class="spinner"
+        color="primary"
+        diameter="40"
+        mode="indeterminate">
+    </mat-progress-spinner>
+  </header>
+
+  <mat-divider></mat-divider>
+
+  <section>
+    <aside class="sidebar">
+      <mat-nav-list>
+        <a mat-list-item>
+          <mat-icon mat-list-icon>attach_money</mat-icon>
+          <h4 mat-line>Финансы</h4>
+        </a>
+
+        <a mat-list-item active>
+          <h4 mat-line subitem>Перевести в FB</h4>
+        </a>
+
+        <a mat-list-item>
+          <h4 mat-line subitem>Выписать счёт</h4>
+        </a>
+
+        <a mat-list-item>
+          <mat-icon mat-list-icon>forum</mat-icon>
+          <h4 mat-line>Сообщения</h4>
+        </a>
+
+        <a mat-list-item>
+          <mat-icon mat-list-icon>access_time</mat-icon>
+          <h4 mat-line>Статистика</h4>
+        </a>
+
+        <a mat-list-item>
+          <mat-icon mat-list-icon>account_box</mat-icon>
+          <h4 mat-line>Профиль</h4>
+        </a>
+
+        <mat-divider></mat-divider>
+
+        <a mat-list-item>
+          <mat-icon mat-list-icon>live_help</mat-icon>
+          <h4 mat-line>Вопросы и ответы</h4>
+        </a>
+
+        <mat-divider></mat-divider>
+
+        <a mat-list-item>
+          <img mat-list-icon [src]="sources.facebook_icon" alt="fb"/>
+          <h4 mat-line>Кабинет FB</h4>
+        </a>
+      </mat-nav-list>
+    </aside>
+
+    <mat-divider [vertical]="true"></mat-divider>
+
+    <article class="main">
+      <div class="heading">
+        <h3>Увеличить лимит в Facebook</h3>
+      </div>
+
+      <form class="theform" (ngSubmit)="onSubmit()">
+        <p>Укажите сумму, на которую нужно увеличить лимит:</p>
+
+        <mat-form-field class="limit">
+          <input matInput
+                 name="limit"
+                 type="number"
+                 placeholder="Лимит"
+                 value=""
+                 autocomplete="off"
+                 [formControl]="limitFormControl"
+                 [errorStateMatcher]="matcher">
+          <mat-error *ngIf="limitFormControl.hasError('required')" class="error">
+            Значение <strong>не заполнено</strong>
+          </mat-error>
+          <mat-error *ngIf="limitFormControl.hasError('min')" class="error">
+            Значение должно быть <strong>положительным</strong> числом
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="submit" [disabled]="loading || limitFormControl.invalid">
+          Перевод
+        </button>
+      </form>
+    </article>
+  </section>
+</div>
+
+<!--
+<router-outlet></router-outlet>
+-->

@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: stretch;
+  height: 100%;
+  min-width: 600px;
+
+  $header-height: 80px;
+
+  header {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+    .logo {
+      height: $header-height;
+
+      img {
+        width: $header-height;
+        height: $header-height;
+      }
+    }
+
+    .heading {
+      padding-left: 64px;
+    }
+
+    .spinner {
+      position: absolute;
+      right: 20px;
+    }
+  }
+
+  section {
+    display: flex;
+    flex-flow: row nowrap;
+    height: calc(100% - #{$header-height});
+
+    $main-color: rgba(124, 37, 253, 1);
+
+    .sidebar {
+      flex-grow: 1;
+
+      [active] {
+        color: $main-color;
+      }
+
+      [subitem] {
+        margin-left: 80px;
+      }
+
+      [mat-list-icon] {
+        color: $main-color;
+      }
+    }
+
+    .main {
+      flex-grow: 4;
+      padding: 20px;
+
+      .submit {
+        margin-left: 20px;
+      }
+    }
+  }
+}
