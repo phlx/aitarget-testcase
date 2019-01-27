@@ -9,7 +9,9 @@ export interface LimitRequestDataInterface {
   providedIn: 'root'
 })
 export class BackendService {
-  baseUrl = document.location.protocol === 'http:' ? 'http://localhost:8080' : 'https://localhost:8443';
+  baseUrl = document.location.hostname === 'localhost'
+      ? (document.location.protocol === 'http:' ? 'http://localhost:8080' : 'https://localhost:8443')
+      : '';
 
   defaultHeaders = {accept: 'application/json'};
 

@@ -368,7 +368,9 @@ __webpack_require__.r(__webpack_exports__);
 var BackendService = /** @class */ (function () {
     function BackendService(http) {
         this.http = http;
-        this.baseUrl = document.location.protocol === 'http:' ? 'http://localhost:8080' : 'https://localhost:8443';
+        this.baseUrl = document.location.hostname === 'localhost'
+            ? (document.location.protocol === 'http:' ? 'http://localhost:8080' : 'https://localhost:8443')
+            : '';
         this.defaultHeaders = { accept: 'application/json' };
     }
     BackendService.prototype.getLimit = function () {
