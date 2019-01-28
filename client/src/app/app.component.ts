@@ -35,10 +35,9 @@ export class AppComponent implements AfterContentInit {
   limit = 0;
 
   sources = {
-    logo: 'https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_630,w_1200,f_auto,q_auto/'
-        + 'v1/91224/aitarget_logo_square_r3rism.jpg',
+    logo: '/assets/aitarget_logo.png',
 
-    facebook_icon: 'http://www.vectorico.com/download/social_media/Facebook-Icon.svg'
+    facebook_icon: '/assets/facebook_icon.svg'
   };
 
   limitFormControl = new FormControl('', [

@@ -125,9 +125,8 @@ var AppComponent = /** @class */ (function () {
         this.loading = false;
         this.limit = 0;
         this.sources = {
-            logo: 'https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_630,w_1200,f_auto,q_auto/'
-                + 'v1/91224/aitarget_logo_square_r3rism.jpg',
-            facebook_icon: 'http://www.vectorico.com/download/social_media/Facebook-Icon.svg'
+            logo: '/assets/aitarget_logo.png',
+            facebook_icon: '/assets/facebook_icon.svg'
         };
         this.limitFormControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [
             _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required,
